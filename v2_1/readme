@@ -1,1 +1,27 @@
+# Timex/Sinclair 2068 Bus Extender
 
+This printed circuit board plugs into the expansion bus on the back of the Timex/Sinclair 2068 and provides four expansion slots.
+
+## Features
+- Relay switched power to the expansion bus
+- Optional external power per expansion slot
+- Power LED
+- A means of passing the /BE signal forward to cards closer to the computer
+- A TS2068 expansion bus for connecting other expansion devices
+
+## Backward and Forward Compatibility
+
+This expansion bus was designed to provide compatibility with older hardware that uses the /BE signal to implement its own ROM. 
+Earlier disk drive systems, like the John Oliger disk drive system, used /BE to enable its internal ROM when the user issued
+certain commands.
+
+The expansion bus has jumpers to map the /BE signal (pin 29A) to BUSISO (pin 30B). Expansion cards configured to recognize
+/BE coming in on BUSISO, like the TS Pico, will disable themselves and pass the /BE forward to the computer. This should
+prevent bus contention between a John Oliger disk system and the TS Pico.
+
+Each slot has a jumper to enable this /BE pass-forward feature. It can use a standard pin jumper or a switch wired to a jumper connector.
+
+## Power
+
+The TS2068 power supply can provide power to a limited number of expansion devices. This board includes options for external 5 volt power and 
+the ability to select external/internal power per slot (and the extension of the expansion bus). Power to the board is switched by a relay.
